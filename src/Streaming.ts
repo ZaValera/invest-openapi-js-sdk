@@ -208,7 +208,7 @@ export default class Streaming extends EventEmitter {
       this._subscribeMessages.push(message);
     }
 
-    const handler = (x: any) => setImmediate(() => cb(x));
+    const handler = (x: any, metaParams: any) => setImmediate(() => cb(x, metaParams));
 
     this.on(eventName, handler);
 
